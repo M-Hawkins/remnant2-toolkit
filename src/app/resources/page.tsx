@@ -10,8 +10,8 @@ export default async function Page() {
       image="resources"
       title="Toolkit Resources"
       description={
-        <div className="mt-6 text-lg leading-8 text-gray-300">
-          <p className="mt-6 text-lg leading-8 text-gray-300">
+        <div className="mt-6 text-lg leading-8">
+          <p className="mt-6 text-lg leading-8">
             {NAV_ITEMS.resources.description}
           </p>
         </div>
@@ -22,7 +22,7 @@ export default async function Page() {
           {...NAV_ITEMS.worldSaveArchive}
           icon={
             <NAV_ITEMS.worldSaveArchive.icon
-              className="h-7 w-7 flex-none text-primary-500"
+              className="h-7 w-7 flex-none text-primary"
               aria-hidden="true"
             />
           }
@@ -32,7 +32,7 @@ export default async function Page() {
           {...NAV_ITEMS.bossTracker}
           icon={
             <NAV_ITEMS.bossTracker.icon
-              className="h-7 w-7 flex-none text-primary-500"
+              className="h-7 w-7 flex-none text-primary"
               aria-hidden="true"
             />
           }
@@ -42,7 +42,7 @@ export default async function Page() {
           {...NAV_ITEMS.hardcoreVeteran}
           icon={
             <NAV_ITEMS.hardcoreVeteran.icon
-              className="h-7 w-7 flex-none text-primary-500"
+              className="h-7 w-7 flex-none text-primary"
               aria-hidden="true"
             />
           }
@@ -56,7 +56,7 @@ export default async function Page() {
               width={20}
               height={20}
               alt={`${NAV_ITEMS.vashCalculator.label}, ${NAV_ITEMS.vashCalculator.description}`}
-              className="mr-2 h-7 w-7 flex-none text-primary-600"
+              className="mr-2 h-7 w-7 flex-none text-primary"
               aria-hidden="true"
             />
           }
@@ -70,7 +70,7 @@ export default async function Page() {
               width={11}
               height={20}
               alt={`${NAV_ITEMS.wiki.label}, ${NAV_ITEMS.wiki.description}`}
-              className="mr-2 h-7 w-5 flex-none text-primary-600"
+              className="mr-2 h-7 w-5 flex-none text-primary"
               aria-hidden="true"
             />
           }
@@ -80,7 +80,7 @@ export default async function Page() {
           {...NAV_ITEMS.r2ag}
           icon={
             <NAV_ITEMS.r2ag.icon
-              className="h-7 w-7 flex-none text-primary-500"
+              className="h-7 w-7 flex-none text-primary"
               aria-hidden="true"
             />
           }

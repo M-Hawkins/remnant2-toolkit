@@ -330,19 +330,19 @@ export const INLINE_TOKENS = [
   {
     type: 'Negative Status Effects',
     token: 'Negative Status Effects',
-    color: 'text-purple-400',
+    color: 'text-secondary',
     description: `Bleeding, Burning, Corroded, Overloaded, Slow.`,
   },
   {
     type: 'Negative Status Effect',
     token: 'Negative Status Effect',
-    color: 'text-purple-400',
+    color: 'text-secondary',
     description: `Bleeding, Burning, Corroded, Overloaded, Slow.`,
   },
   {
     type: 'Negative Status',
     token: 'Negative Status',
-    color: 'text-purple-400',
+    color: 'text-secondary',
     description: `Bleeding, Burning, Corroded, Overloaded, Slow.`,
   },
   {
@@ -366,13 +366,13 @@ export const INLINE_TOKENS = [
   {
     type: 'Status Effects',
     token: 'Status Effects',
-    color: 'text-purple-400',
+    color: 'text-secondary',
     description: `Bleeding, Burning, Corroded, Overloaded, Slow.`,
   },
   {
     type: 'Status Effect',
     token: 'Status Effect',
-    color: 'text-purple-400',
+    color: 'text-secondary',
     description: `Bleeding, Burning, Corroded, Overloaded, Slow.`,
   },
   {

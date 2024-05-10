@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 
 import { Footer } from '@/features/ui/Footer'
 import { cn } from '@/lib/classnames'
@@ -15,12 +16,11 @@ import { NavBar } from '@/app/(components)/nav-bar'
 import { PreloadResources } from '@/features/ui/PreloadResources'
 
 import { SessionProvider } from '../features/auth/components/SessionProvider'
+import { ThemeSelection } from './(utils)/theme-utils'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const viewport: Viewport = {
-  themeColor: '#581c87',
-}
+export const viewport: Viewport = {}
 
 export default async function RootLayout({
   children,
@@ -28,7 +28,8 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
+      <head />
       <body
         className={cn(
           'relative flex min-h-fit flex-col items-center justify-start',
@@ -37,26 +38,26 @@ export default async function RootLayout({
       >
         <PreloadResources />
         <SessionProvider>
-          <GlobalActionButtons />
-          {/* <div className="w-full bg-blue-950 p-1 text-center text-sm">
-            <BaseText>
-              Use the <BaseCode>Include Patch Affected Builds</BaseCode> filter
-              to see all patch affected builds! Update your pre-patch builds
-              now!
-            </BaseText>
-          </div> */}
-          <div className="flex h-full w-full max-w-7xl grow flex-col items-start justify-start">
-            <header className="w-full">
-              <NavBar />
-            </header>
-
-            <main className="flex h-full min-h-screen w-full grow flex-col items-center justify-start p-4 pt-0">
-              <ToastContainer theme="dark" pauseOnFocusLoss={false} />
-              {children}
-            </main>
-          </div>
-
-          <Footer />
+          <ThemeSelection>
+            <GlobalActionButtons />
+            {/* <div className="w-full bg-blue-950 p-1 text-center text-sm">
+              <BaseText>
+                Use the <BaseCode>Include Patch Affected Builds</BaseCode> filter
+                to see all patch affected builds! Update your pre-patch builds
+                now!
+              </BaseText>
+            </div> */}
+            <div className="flex h-full w-full max-w-7xl grow flex-col items-start justify-start">
+              <header className="w-full">
+                <NavBar />
+              </header>
+              <main className="flex h-full min-h-screen w-full grow flex-col items-center justify-start p-4 pt-0">
+                <ToastContainer pauseOnFocusLoss={false} />
+                {children}
+              </main>
+            </div>
+            <Footer />
+          </ThemeSelection>
         </SessionProvider>
         <Analytics />
         {/* <SpeedInsights /> */}

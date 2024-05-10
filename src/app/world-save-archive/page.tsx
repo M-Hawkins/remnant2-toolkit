@@ -15,7 +15,7 @@ export default function Page() {
         subtitle={`A collection of ${worldSaves.length} curated world saves for apocalypse bosses with specific affixes.`}
       />
       <div className="flex max-w-xl flex-col items-start justify-center">
-        <p className="text-md mb-2 text-white">
+        <p className="text-md mb-2 text-on-background">
           Before you start, it is important to understand how to back up your
           own world saves, and how to install the world saves provided by the
           Remnant 2 Toolkit.{' '}
@@ -25,10 +25,10 @@ export default function Page() {
           restoring a backup save should fix this, at least one user stated it
           did not.
         </p>
-        <p className="text-md mb-4 font-bold text-white">
+        <p className="text-md mb-4 font-bold text-on-background">
           <Link
             href="/world-save-archive/instructions"
-            className="text-accent1-500 underline hover:text-accent1-300"
+            className="text-highlight-container underline hover:text-highlight"
           >
             Please click here for complete instructions.
           </Link>
