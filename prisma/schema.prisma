@@ -77,6 +77,7 @@ model User {
   PaidUsers     PaidUsers[]
   UserProfile   UserProfile?
   UserLoadouts  UserLoadouts[]
+  UserItems     UserItems[]
 }
 
 model UserProfile {
@@ -87,7 +88,7 @@ model UserProfile {
   user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
   bio                  String   @db.Text
   avatarId             String   @default("2zr34P") // Gorge
-  totalDiscoveredItems Int      @default(0)
+  totalDiscoveredItems Int      @default(0) // TODO: Remove, deprecated
   topItemQuizScore     Int      @default(0)
   isLoadoutPublic      Boolean  @default(false)
   Build                Build[]
@@ -147,6 +148,7 @@ model Item {
   dlc        ITEM_DLC     @default(base)
   isActive   Boolean      @default(true)
   BuildItems BuildItems[]
+  UserItems  UserItems[]
 }
 
 model UserLoadouts {
@@ -161,6 +163,20 @@ model UserLoadouts {
 
   @@index([userId])
   @@index([buildId])
+}
+
+model UserItems {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  itemId    String
+  itemLevel Int?     @default(0)
+
+  @@index([userId])
+  @@index([itemId])
 }
 
 model Build {
